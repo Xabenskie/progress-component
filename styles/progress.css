@@ -1,0 +1,52 @@
+.progress {
+	--progress-size: 120px;
+	--progress-color: #005bff;
+	--progress-track-color: #eef3f6;
+	--progress-duration: 1.5s;
+
+	width: var(--progress-size);
+	height: var(--progress-size);
+	flex: none;
+}
+
+.progress__rotor,
+.progress__ring {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.progress__track,
+.progress__arc {
+	fill: none;
+	stroke-width: 10;
+}
+
+.progress__track {
+	stroke: var(--progress-track-color);
+}
+
+.progress__arc {
+	stroke: var(--progress-color);
+	stroke-linecap: butt;
+}
+
+.progress[data-animated='true'] .progress__rotor {
+	animation: progress-rotation var(--progress-duration) linear infinite;
+}
+
+.progress[data-hidden='true'] {
+	visibility: hidden;
+}
+
+@keyframes progress-rotation {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.progress[data-animated='true'] .progress__rotor {
+		animation: none;
+	}
+}

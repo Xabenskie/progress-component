@@ -1,0 +1,10 @@
+{
+	"name": "ozon-progress",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Reusable Progress block in vanilla HTML, CSS and JavaScript",
+	"scripts": {
+		"start": "python3 -m http.server 8000 --bind 127.0.0.1",
+		"test": "node tests/run.mjs"
+	}
+}

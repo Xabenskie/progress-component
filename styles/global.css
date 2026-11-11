@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  min-height: 360px;
+  padding: 20px;
+}
+
+.app__title {
+  flex: none;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.workspace {
+  display: grid;
+  flex: 1;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 480px;
+  min-height: 0;
+  margin: 24px auto 0;
+  padding-bottom: 68px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+  width: 140px;
+  margin: 0;
+}
+
+.controls__row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 22px;
+  min-height: 28px;
+}
+
+.controls label {
+  width: fit-content;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.value-input {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  width: 44px;
+  height: 28px;
+  padding: 0 2px;
+  border: 1px solid #000;
+  border-radius: 16px;
+  color: inherit;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
+}
+
+.value-input::-webkit-inner-spin-button,
+.value-input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.value-input[aria-invalid="true"] {
+  border-color: #c62828;
+}
+
+.switch {
+  appearance: none;
+  position: relative;
+  width: 44px;
+  height: 28px;
+  margin: 0;
+  border: 0;
+  border-radius: 16px;
+  background: #dfe6f0;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 150ms ease;
+}
+
+.switch:checked {
+  background: #005bff;
+}
+
+.switch:checked::before {
+  transform: translateX(16px);
+}
+
+.value-input:focus-visible,
+.switch:focus-visible {
+  outline: 2px solid #005bff;
+  outline-offset: 4px;
+}
+
+@media (orientation: landscape) {
+  .app {
+    min-height: 240px;
+  }
+
+  .workspace {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .controls {
+    justify-self: start;
+    margin-left: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch,
+  .switch::before {
+    transition: none;
+  }
+}

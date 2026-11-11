@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#ffffff" />
+		<title>Progress</title>
+		<link rel="icon" href="data:," />
+		<link rel="stylesheet" href="styles/progress.css" />
+		<link rel="stylesheet" href="styles/global.css" />
+		<script src="scripts/progress.js" defer></script>
+		<script src="scripts/app.js" defer></script>
+	</head>
+	<body>
+		<main class="app">
+			<h1 class="app__title">Progress</h1>
+			<div class="workspace">
+				<div id="progress" class="preview"></div>
+				<form
+					class="controls"
+					aria-label="Progress controls"
+					autocomplete="off"
+				>
+					<div class="controls__row">
+						<input
+							class="value-input"
+							id="value"
+							type="number"
+							inputmode="decimal"
+							min="0"
+							max="100"
+							step="any"
+							value="60"
+							aria-controls="progress"
+						/>
+						<label for="value">Value</label>
+					</div>
+					<div class="controls__row">
+						<input
+							class="switch"
+							id="animate"
+							type="checkbox"
+							role="switch"
+							aria-controls="progress"
+						/>
+						<label for="animate">Animate</label>
+					</div>
+					<div class="controls__row">
+						<input
+							class="switch"
+							id="hide"
+							type="checkbox"
+							role="switch"
+							aria-controls="progress"
+						/>
+						<label for="hide">Hide</label>
+					</div>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>
