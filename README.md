@@ -6,15 +6,15 @@
 
 ## Подключение
 
-Для использования нужны два файла: `progress.js` и `progress.css`.
+Для использования нужны два файла: `scripts/progress.js` и `styles/progress.css`.
 Подключи стили, добавь контейнер и создай экземпляр после загрузки скрипта:
 
 ```html
-<link rel="stylesheet" href="progress.css">
+<link rel="stylesheet" href="styles/progress.css">
 
 <div id="upload-progress"></div>
 
-<script src="progress.js"></script>
+<script src="scripts/progress.js"></script>
 <script>
   const uploadProgress = new Progress(
     document.querySelector('#upload-progress'),
@@ -188,6 +188,6 @@ npm start
 и **Hide** — вращением и видимостью. В портретной ориентации управление
 располагается под кольцом, в альбомной — справа.
 
-`app.js` связывает элементы управления с API; `styles.css` задаёт
+`scripts/app.js` связывает элементы управления с API; `styles/global.css` задаёт
 компоновку демонстрации. Для подключения компонента в другом приложении
 эти файлы не нужны.
